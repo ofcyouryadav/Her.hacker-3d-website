@@ -3,12 +3,18 @@
 import { motion } from "framer-motion"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei"
-import { Code2, Sparkles } from "lucide-react"
+import { Sparkles } from "lucide-react"
 
 function AnimatedSphere() {
   return (
     <Sphere args={[1, 100, 200]} scale={2.5}>
-      <MeshDistortMaterial color="#a855f7" attach="material" distort={0.5} speed={2} roughness={0.2} />
+      <MeshDistortMaterial
+        color="#a855f7"
+        attach="material"
+        distort={0.5}
+        speed={2}
+        roughness={0.2}
+      />
     </Sphere>
   )
 }
@@ -31,8 +37,11 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8 relative">
-      {/* 3D Background */}
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8 relative"
+    >
+      {/* 🌌 3D Background */}
       <div className="absolute inset-0 opacity-30">
         <Canvas>
           <ambientLight intensity={0.5} />
@@ -42,7 +51,7 @@ export default function Hero() {
         </Canvas>
       </div>
 
-      {/* Floating particles */}
+      {/* ✨ Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -65,6 +74,7 @@ export default function Hero() {
         ))}
       </div>
 
+      {/* 🌟 Hero Content */}
       <motion.div
         className="max-w-6xl w-full relative z-10"
         variants={containerVariants}
@@ -72,23 +82,37 @@ export default function Hero() {
         animate="visible"
       >
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+          {/* 🧠 Left Content */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <motion.div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full" variants={itemVariants}>
+            <motion.div
+              className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full"
+              variants={itemVariants}
+            >
               <Sparkles size={16} className="text-accent" />
-              <span className="text-sm text-muted-foreground">Available for freelance</span>
+              <span className="text-sm text-muted-foreground">
+                Available for freelance
+              </span>
             </motion.div>
 
-            <motion.h1 className="text-5xl md:text-7xl font-bold leading-tight" variants={itemVariants}>
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold leading-tight"
+              variants={itemVariants}
+            >
               <span className="gradient-text neon-text">Her.Hacker</span>
             </motion.h1>
 
-            <motion.p className="text-xl md:text-2xl text-muted-foreground" variants={itemVariants}>
-              Passionate full-stack developer crafting interactive 3D web experiences. Love turning code into
-              creativity.
+            <motion.p
+              className="text-xl md:text-2xl text-muted-foreground"
+              variants={itemVariants}
+            >
+              Passionate full-stack developer crafting interactive 3D web
+              experiences. Love turning code into creativity.
             </motion.p>
 
-            <motion.div className="flex flex-wrap gap-4 pt-4" variants={itemVariants}>
+            <motion.div
+              className="flex flex-wrap gap-4 pt-4"
+              variants={itemVariants}
+            >
               <motion.a
                 href="#projects"
                 className="px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold neon-glow hover:scale-105 transition-transform"
@@ -108,17 +132,16 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Profile Image */}
+          {/* 👤 Right Content — Profile Image */}
           <motion.div className="flex justify-center" variants={itemVariants}>
             <div className="relative w-80 h-80">
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-secondary rounded-full blur-3xl opacity-30 animate-pulse-glow" />
               <div className="relative w-full h-full glass-strong rounded-full overflow-hidden border-2 border-primary/30 flex items-center justify-center animate-float">
-                <div className="w-72 h-72 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Code2 size={80} className="mx-auto text-primary mb-4 animate-pulse" />
-                    <p className="text-sm text-muted-foreground">Your Profile Image</p>
-                  </div>
-                </div>
+                <img
+                  src="/Hacker.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
             </div>
           </motion.div>
