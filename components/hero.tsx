@@ -29,7 +29,7 @@ export default function Hero() {
             <div className="space-y-2">
               <motion.h1 className="text-5xl md:text-6xl font-bold text-balance" variants={itemVariants}>
                 <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  Yadav.Dev
+                  Her.hacker
                 </span>
               </motion.h1>
               <motion.h2 className="text-2xl md:text-3xl text-muted-foreground" variants={itemVariants}>
@@ -76,7 +76,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-3xl opacity-20 animate-float"></div>
               <div className="relative w-full h-full bg-gradient-to-br from-card to-card/50 rounded-2xl border-2 border-primary/30 overflow-hidden flex items-center justify-center">
                 <div className="relative w-64 h-64 rounded-xl overflow-hidden">
-                  <Image src="/profile.jpg" alt="Yadav.Dev Profile" fill className="object-cover" priority />
+                  <Image src="/profile.jpg" alt="Her.hacker Profile" fill className="object-cover" priority />
                 </div>
               </div>
             </div>
